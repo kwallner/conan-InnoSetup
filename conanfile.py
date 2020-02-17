@@ -6,7 +6,7 @@ from subprocess import call
 
 class InnoSetupConan(ConanFile):
     name = "InnoSetup"
-    version = "5.6.1"
+    version = "6.0.3"
     license = "..."
     license_url = "..."
     url = "..."
@@ -16,11 +16,11 @@ class InnoSetupConan(ConanFile):
     generators = "txt"
     settings = {"os": ["Windows"], "arch": ["x86_64"]}
     no_copy_source = True
-    _iss_pack= "%s-%s-unicode.exe" % (name.lower(), version)
+    _iss_pack= "%s-%s.exe" % (name.lower(), version)
     _iss_url = "https://mlaan2.home.xs4all.nl/ispack/%s" % (_iss_pack)
     
     def build_requirements(self):
-        self.build_requires("InnoSetupUnpacker/0.48@kwallner/testing")
+        self.build_requires("InnoSetupUnpacker/0.49@kwallner/testing")
 
     def source(self):
         tools.download(self._iss_url, self._iss_pack)
