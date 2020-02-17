@@ -20,7 +20,7 @@ class InnoSetupConan(ConanFile):
     _iss_url = "https://mlaan2.home.xs4all.nl/ispack/%s" % (_iss_pack)
     
     def build_requirements(self):
-        self.build_requires("InnoSetupUnpacker/0.49@kwallner/testing")
+        self.build_requires("InnoSetupUnpacker/0.49@%s/%s" % (self.user, self.channel))
 
     def source(self):
         tools.download(self._iss_url, self._iss_pack)
