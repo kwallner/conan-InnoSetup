@@ -29,10 +29,9 @@ class InnoSetupConan(ConanFile):
         call(["innounp.exe", "-x", os.path.join(self.source_folder, self._iss_pack)])
         os.remove("install_script.iss")
         shutil.rmtree("{tmp}")
-        os.rename("{app}", "InnoSetup")
-
+        
     def package(self):
-        self.copy(pattern="*", src= "%s/InnoSetup" % self.build_folder)
+        self.copy(pattern="*", src= "%s/{app}" % self.build_folder)
                     
     def package_info(self):
         self.env_info.PATH.insert(0, self.package_folder)
