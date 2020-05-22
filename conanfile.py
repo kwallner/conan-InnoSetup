@@ -6,7 +6,7 @@ from subprocess import call
 
 class InnoSetupConan(ConanFile):
     name = "InnoSetup"
-    version = "6.0.4"
+    version = "6.0.5"
     license = "..."
     license_url = "..."
     url = "..."
